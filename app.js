@@ -11,7 +11,7 @@ const userRoute=require('./route/userRoute')
 const app = express();
 
 app.use(cors({
-    origin:["http://ja-vognmand.dk","https://shy-pink-cheetah-wig.cyclic.app"]
+    origin:["http://ja-vognmand.dk","https://shy-pink-cheetah-wig.cyclic.app"],
     credentials:true
 
 })) 
