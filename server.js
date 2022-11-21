@@ -14,8 +14,7 @@ const app =require('./app')
 const server = http.createServer(app)
 
 const port = 3000
-const address = "0.0.0.0"
-server.listen(port,address,()=>{
+server.listen(port,()=>{
     console.log('App Running On Port 3000')
     console.log(server.address())
 })
