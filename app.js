@@ -12,7 +12,8 @@ const app = express();
 
 app.use(cors({
     origin:"http://ja-vognmand.dk",
-    credentials:true
+    credentials:true,
+    allowedHeaders:{'Access-Control-Allow-Origin':'*'}
 
 })) 
 app.use(express.json({limit:'10kb'}));
