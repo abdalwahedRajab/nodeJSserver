@@ -20,7 +20,7 @@ const creatSendToken = (user,statusCode,res)=>{
 
     res.cookie('jwt',token,cookieOptions)
 
-    res.status(statusCode).json({
+  return  res.status(statusCode).json({
         status:'success',
         token
     })
