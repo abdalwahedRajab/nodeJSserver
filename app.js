@@ -11,7 +11,7 @@ const userRoute=require('./route/userRoute')
 const app = express();
 
 app.use(cors({
-    origin  : "http://ja-vognmand.dk",
+    origin  : ["http://ja-vognmand.dk","https://nodejs-server-iq5z.onrender.com"],
     credentials:true
 
 })) 
@@ -33,7 +33,7 @@ app.use(express.json({limit:'10kb'}));
 app.use(cookieParser())
 
 //route
-app.use('/api/v1/users',userRoute);
+app.use('/api/v1/users',res.setHeader('Content-Type', 'text/plain'),userRoute);
 
 app.all('*',(req,res,next)=>{
     next(new AppError(`Can't find ${req.originalUrl} on this Server`,404));
