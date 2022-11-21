@@ -1,7 +1,8 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-
+const session = require('express-session')
+ 
 const AppError = require('./utils/appError')
 const globalErrorHandler = require('./controllers/errorControllers')
 const userRoute=require('./route/userRoute')
@@ -14,6 +15,19 @@ app.use(cors({
     credentials:true
 
 })) 
+app.use(
+    session({
+      resave: false,
+      saveUninitialized: false,
+      secret: "sessionss",
+      cookie: {
+        maxAge: 1000 * 60 * 60,
+        sameSite: "none",
+        // httpOnly: false,
+        secure: true,
+      },
+    })
+  );
 
 app.use(express.json({limit:'10kb'}));
 app.use(cookieParser())
