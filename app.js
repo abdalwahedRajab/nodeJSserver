@@ -11,7 +11,7 @@ const userRoute=require('./route/userRoute')
 const app = express();
 
 app.use(cors({
-    origin  : ["http://ja-vognmand.dk","https://nodejs-server-iq5z.onrender.com"],
+    origin  : "http://ja-vognmand.dk",
     credentials:true
 
 })) 
