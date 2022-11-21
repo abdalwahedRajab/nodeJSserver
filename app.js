@@ -15,25 +15,11 @@ app.use(cors({
     credentials:true
 
 })) 
-app.use(
-    session({
-      resave: false,
-      saveUninitialized: false,
-      secret: "sessionss",
-      cookie: {
-        maxAge: 1000 * 60 * 60,
-        sameSite: "none",
-        // httpOnly: false,
-        secure: true,
-      },
-    })
-  );
-
 app.use(express.json({limit:'10kb'}));
 app.use(cookieParser())
 
 //route
-app.use('/api/v1/users',res.setHeader('Content-Type', 'text/plain'),userRoute);
+app.use('/api/v1/users',userRoute);
 
 app.all('*',(req,res,next)=>{
     next(new AppError(`Can't find ${req.originalUrl} on this Server`,404));
