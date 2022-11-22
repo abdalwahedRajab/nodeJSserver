@@ -44,8 +44,7 @@ exports.signup=catchAsync (async(req,res,next)=>{
 })
 
 exports.login = catchAsync(async(req,res,next)=>{
-        res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
     const {email,password} = req.body;
     const user = await User.findOne({email}).select('+password')
 
