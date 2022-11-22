@@ -16,7 +16,7 @@ const creatSendToken = (user,statusCode,res)=>{
     const cookieOptions = {
         expires:new Date(Date.now()+ process.env.JWT_COKIE_EXPIRES_IN * 24 *60 *60 *1000),
         httpOnly: true,
-        domain:"https://ja-vognamnddd.adaptable.app"
+        domain:"ja-vognamnddd.adaptable.app"
     }
     if (process.env.NODE_ENV==='production') cookieOptions.secure = true;
 
@@ -60,7 +60,7 @@ exports.logout = catchAsync(async(req,res,next)=>{
     res.cookie('jwt','loogedout',{
         expires:new Date ( Date.now() + 1 * 1000),
         httpOnly:true,
-        domain:"https://ja-vognamnddd.adaptable.app"
+        domain:"ja-vognamnddd.adaptable.app"
     })
     res.status(200).json({
         status:'success'
