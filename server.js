@@ -13,7 +13,7 @@ const app =require('./app')
 
 const server = http.createServer(app)
 const address = "0.0.0.0"
-server.listen(process.env.port,address,()=>{
+server.listen(process.env.PORT,address,()=>{
     console.log("alsjd;ad;la;sdl")
     console.log('App Running On Port 3000')
     console.log(server.address())
