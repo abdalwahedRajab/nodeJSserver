@@ -12,9 +12,8 @@ db.once("open", () => {
 const app =require('./app')
 
 const server = http.createServer(app)
-
-const port = 3000
-server.listen(port,()=>{
+const address = "0.0.0.0"
+server.listen(process.env.port,address,()=>{
     console.log("alsjd;ad;la;sdl)
     console.log('App Running On Port 3000')
     console.log(server.address())
