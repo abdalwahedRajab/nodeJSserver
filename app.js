@@ -15,13 +15,14 @@ app.use(cors({
     credentials:true
 
 })) 
+app.options("*",cors())
 app.use(express.json({limit:'10kb'}));
 app.use(cookieParser())
 
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://ja-vognmand.dk');
+    res.setHeader('Access-Control-Allow-Origin', 'http://185.20.205.59');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
